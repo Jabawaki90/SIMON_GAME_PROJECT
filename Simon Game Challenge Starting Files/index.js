@@ -1,168 +1,151 @@
-// const playerDetail ={level:[]}
+const buttonColours = ["red", "blue", "green", "yellow"];
 
-// const leveling = (i)=>{
-    
+const nextSequence = () => {
+  const randomNumber = Math.floor(Math.random() * 4);
+  const randomChosenColour = buttonColours[randomChosenColour];
+  console.log(randomChosenColour);
+  return randomChosenColour;
+};
 
-// }
+nextSequence();
 
-// const answer = (i)=>{
+// let level = [];
+// let nextLevel = [];
 
-//     const latest = [];
-//     latest.push(i.target.id)
-//     if(latest === playerDetail.level[playerDetail.level.length -1]){
-//         console.log('true')
-//     }else{
-//         console.log('false')
+// const buttonClickAnimation = (i) => {
+//   $(`#${i}`).addClass("pressed");
+//   const remove = () => $(`#${i}`).removeClass("pressed");
+//   setTimeout(remove, 100);
+// };
+
+// const buttonAutoClickAnimation = (i) => {
+//   i.removeClass("pressed");
+// };
+
+// const initialColor = (i) => {
+//   const firstButtonColor = $(".btn")[i].id;
+//   const style = $(`#${firstButtonColor}`).addClass("pressed");
+//   setTimeout(() => buttonAutoClickAnimation(style), 300);
+//   level.push(firstButtonColor);
+//   console.log("initial color:" + level);
+// };
+
+// const startGame = (i) => {
+//   if (i === "a" && level.length === 0) {
+//     $("h1").text("game start");
+//   } else {
+//     return;
+//   }
+// };
+
+// const gameOver = () => {
+//   $("body").addClass("game-over");
+// };
+
+// const compare = () => {
+//   let latest = [];
+//   if (level.length != nextLevel.length) {
+//     return false;
+//   } else {
+//     for (let i = 0; i < level.length; i++) {
+//       if (level[i] != nextLevel[i]) {
+//         gameOver();
+//         return false;
+//       } else {
+//         return true;
+//       }
 //     }
-//     console.log(latest)
-// }
+//   }
+// };
 
-// const newRandomButton = ()=>{
-//     const random = Math.floor(Math.random()*4)
-//     let randomButton = $('.btn')[random].id
-//     playerDetail.level.push(randomButton)
-//     $(`#${randomButton}`).addClass('pressed')
-//     setTimeout(()=> $(`#${randomButton}`).removeClass('pressed'), 500)
-    
-// }
+// const newLevel = () => {
+//   const newPattern = $(".btn")[randomGenerator()].id;
+//   level.push(newPattern);
+// };
 
-// const gameStart = (i)=>{
-//     if(i.key === "a"){
-//         if(playerDetail.level.length===0){
-//         $('h1').text('Game Start')
-//         newRandomButton()
-//         }else{
-//             return
-//         }
-//     }else{
-//         return
-//     }
-// }
+// const newLevelAnim = () => {
+//   for (let i = 0; i < level.length; i++) {
+//     const anim = $(`#${level[i]}`).addClass("pressed");
+//     setTimeout(() => anim.removeClass("pressed"), 500);
+//   }
+// };
 
-// const buttonPressed = (i)=>{
-//     $(`#${i.target.id}`).addClass('pressed')
-//     setTimeout(()=>$(`#${i.target.id}`).removeClass('pressed'), 100)
-// }
+// // const compare = () => {
+// //   let latest = [];
+// //   if (level.length === nextLevel.length) {
+// //     for (let index = 0; index < nextLevel.length; index++) {
+// //       if (level[index] === nextLevel[index]) {
+// //         latest.push(nextLevel[index]);
+// //       } else {
+// //         console.log("game over");
+// //         console.log("restart game");
+// //       }
+// //     }
+// //     level = latest;
+// //     console.log("latest array: " + level);
+// //     console.log("correct!");
+// //   } else {
+// //     return;
+// //   }
+// // };
 
-// const selectColor = (i)=>{
-//     switch (i.target.id) {
-//         case "green":
-//             console.log('green')
-//             buttonPressed(i)
-//             answer(i)
-//             console.log(playerDetail.level)
-//             break;
-//         case "red":
-//             console.log('red')
-//             buttonPressed(i)
-//             answer(i)
-//             console.log(playerDetail.level)
-//             break
-//         case 'yellow':
-//             console.log('yellow')
-//             buttonPressed(i)
-//             answer(i)
-//             console.log(playerDetail.level)
-//             break
-//         case 'blue':
-//             console.log('blue')
-//             buttonPressed(i)
-//             answer(i)
-//             console.log(playerDetail.level)
-//             break
-//         default:
-//             break;
-//     }
-// }
+// // const addNewLevel = (i) => {
+// //   if (level.length === nextLevel.length) {
+// //     const newColor = $(".btn")[randomGenerator()].id;
+// //     console.log("new color: " + newColor);
+// //     level.push(newColor);
+// //   } else {
+// //   }
+// //   console.log("level: " + level);
+// //   console.log("Next level: " + nextLevel);
+// // };
 
+// // const nextAnimation = () => {
+// //   for (let index = 0; index < level.length; index++) {
+// //     const style = $(`#${level[index]}`).addClass("pressed");
+// //     setTimeout(() => buttonAutoClickAnimation(style), 300);
+// //   }
+// // };
 
+// const levelingUp = (input) => {
+//   switch (input) {
+//     case "green":
+//       buttonClickAnimation(input);
+//       nextLevel.push(input);
 
-// $(document).on('keydown', (e)=> gameStart(e))
-// $(document).on('click', (e)=> {selectColor(e)})
+//       break;
+//     case "red":
+//       buttonClickAnimation(input);
+//       nextLevel.push(input);
 
-// console.log()
+//       break;
+//     case "yellow":
+//       buttonClickAnimation(input);
+//       nextLevel.push(input);
 
-const level = []
-const nextLevel = []
+//       break;
+//     case "blue":
+//       buttonClickAnimation(input);
+//       nextLevel.push(input);
 
-const randomGenerator = ()=>{
-     const random = Math.floor(Math.random()*4)
-     return random
-}
+//       break;
+//     default:
+//       break;
+//   }
+//   console.log("level:" + level);
+//   console.log("next level:" + nextLevel);
+// };
 
-const buttonClickAnimation =(i)=>{
-    $(`#${i}`).addClass('pressed')
-    const remove = ()=> $(`#${i}`).removeClass('pressed')
-    setTimeout(remove, 100)
-}
-
-const buttonAutoClickAnimation = (i)=>{
-    i.removeClass('pressed');
-}
-
-const initialButton = (i)=>{
-    const firstButtonColor = $('.btn')[i].id
-    const firstColor = [firstButtonColor]
-    const style = $(`#${firstButtonColor}`).addClass('pressed')
-    setTimeout(()=> buttonAutoClickAnimation(style), 300)
-    level.push(firstColor)
-    console.log(level)
-}
-
-const startGame = (i)=>{
-    const randomIndex = randomGenerator()
-    if(i==="a" && level.length ===0){
-        $('h1').text('game start')
-        initialButton(randomIndex)
-    }else{
-        return
-    }
-    
-}
-
-const compare = ()=>{
-
-    
-    
-}
-
-const addNewColorArray = (color)=>{
-    nextLevel.push(color)
-}
-
-const levelingUp = (input)=>{
-    switch (input) {
-        case 'green':
-            buttonClickAnimation(input)
-            nextLevel.push(input)
-            console.log(input)
-            console.log(nextLevel)
-            break;
-        case 'red':
-            buttonClickAnimation(input)
-            nextLevel.push(input)
-            console.log(input)
-            console.log(nextLevel)
-            break;
-        case 'yellow':
-            buttonClickAnimation(input)
-            nextLevel.push(input)
-            console.log(input)
-            console.log(nextLevel)
-            break;
-        case 'blue':
-            buttonClickAnimation(input)
-            nextLevel.push(input)
-            console.log(input)
-            console.log(nextLevel)
-            break;
-        default:
-            break;
-    }
-}
-
-
-$(document).on('keydown',(e)=>startGame(e.key))
-$('.btn').on('click', (e)=> levelingUp(e.target.id))
-
-console.log(nextLevel)
+// $(document).on("keydown", (e) => {
+//   startGame(e.key);
+//   initialColor(randomGenerator());
+// });
+// $(".btn").on("click", (e) => {
+//   levelingUp(e.target.id);
+//   const result = compare();
+//   if (result === true) {
+//     newLevel();
+//     newLevelAnim();
+//     console.log(result);
+//   }
+// });
